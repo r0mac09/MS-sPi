@@ -3,6 +3,7 @@
 import cv2 #For Image processing 
 import numpy as np #For converting Images to Numerical array 
 import os #To handle directories 
+import time
 from PIL import Image #Pillow lib for handling images
 
 labels = ['Alex Galea', 'Alexandra Girda', 'Michelle Bettendorf', 'Alex Mihaescu', 'Bogdan Pocol', 'Ionut Putanu', 'Sorin Rista'] 
@@ -13,7 +14,14 @@ recognizer = cv2.face.LBPHFaceRecognizer_create() # face recognizer
 
 recognizer.read("trained_model.yml") # load the trained data
 
+delta = 0.2
+
 cap = cv2.VideoCapture(0) #Get vidoe feed from the Camera
+
+starting_time = time.time() #starting timestamp
+saw_faces = {}
+for name in labels:
+    saw_faces[name] = [0, starting_time] # keeping count of the faces detected [count, last_time_seen]
 
 while(True):
     ret, img = cap.read() # Break video into frames
@@ -25,10 +33,21 @@ while(True):
 
             id_, conf = recognizer.predict(roi_gray) #recognize the Face
         
-            if conf >= 60:
+            if conf >= 80:                
                 font = cv2.FONT_HERSHEY_SIMPLEX #Font style for the name 
                 name = labels[id_] #Get the name from the List using ID number 
                 cv2.putText(img, '%s %.2f' % (name, conf), (x,y), font, 1, (0,0,255), 2)
+                time_st = time.time()
+                print(time_st - saw_faces[name][1])
+                if time_st - saw_faces[name][1] < delta:
+                    saw_faces[name][0] = saw_faces[name][0]+1
+                else:
+                    saw_faces[name][0] = 0
+
+                saw_faces[name][1] = time_st
+
+                if saw_faces[name][0] > 10:
+                    print('Recognized ' + name)
             
             cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
 

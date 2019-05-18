@@ -3,7 +3,7 @@ import numpy as np #For converting Images to Numerical array
 import os #To handle directories 
 from PIL import Image #Pillow lib for handling images 
 
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('classifier_data.xml')
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 # recognizer = cv2.createLBPHFaceRecognizer()
 

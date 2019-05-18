@@ -9,24 +9,23 @@ face_cascade = cv2.CascadeClassifier('classifier_data.xml')
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 # recognizer = cv2.createLBPHFaceRecognizer()
 
-Face_ID = -1 
+face_ID = -1 
 pev_person_name = ""
 y_ID = []
 x_train = []
 
-Face_Images = os.path.join(os.getcwd(), "dataset") #Tell the program where we have saved the face images 
-print (Face_Images)
+dataset = os.path.join(os.getcwd(), "dataset") #Tell the program where we have saved the face images 
+print (dataset)
 
-for root, dirs, files in os.walk(Face_Images): #go to the face image directory 
+for root, dirs, files in os.walk(dataset): #go to the face image directory 
 	for file in files: #check every directory in it 
 		if file.endswith("jpeg") or file.endswith("jpg") or file.endswith("png"): #for image files ending with jpeg,jpg or png 
 			path = os.path.join(root, file)
 			person_name = os.path.basename(root)
 			print(path, person_name)
 
-			
 			if pev_person_name!=person_name: #Check if the name of person has changed 
-				Face_ID=Face_ID+1 #If yes increment the ID count 
+				face_ID=face_ID+1 #If yes increment the ID count 
 				pev_person_name = person_name
 
 			
@@ -35,12 +34,12 @@ for root, dirs, files in os.walk(Face_Images): #go to the face image directory
 			Final_Image = np.array(Crop_Image, "uint8")
 			#print(Numpy_Image)
 			faces = face_cascade.detectMultiScale(Final_Image, scaleFactor=1.5, minNeighbors=5) #Detect The face in all sample image 
-			print (Face_ID,faces)
+			print (face_ID,faces)
 
 			for (x,y,w,h) in faces:
 				roi = Final_Image[y:y+h, x:x+w] #crop the Region of Interest (ROI)
 				x_train.append(roi)
-				y_ID.append(Face_ID)
+				y_ID.append(face_ID)
 
 recognizer.train(x_train, np.array(y_ID)) #Create a Matrix of Training data 
 recognizer.save("trained_model.yml") #Save the matrix as YML file 
