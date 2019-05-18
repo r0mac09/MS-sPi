@@ -1,5 +1,3 @@
-#Program to train with the faces and create a YAML file
-
 import cv2 #For Image processing 
 import numpy as np #For converting Images to Numerical array 
 import os #To handle directories 
