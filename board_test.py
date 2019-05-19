@@ -2,4 +2,13 @@ import board
 import time
 
 board.setup()
-time.sleep(500)
+
+board.switchYellowOn()
+
+time.sleep(3)
+
+board.switchBlueOn()
+
+time.sleep(3)
+
+board.kill()

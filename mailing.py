@@ -21,10 +21,18 @@ class sPiMailing:
             header = 'To: ' + user + '\nFrom: ' + self.email + 'Subject: ' + subject
             self.smtp.sendmail(self.email, user, self.header + '\n' + text)
 
-    def notifyWhileAway():
+    def notifyWhileAway(self):
         subject = 'Someone at the front door!'
         for client in self.clients:
             text = 'Hello %s!\n\n\tAt %s sPi system has detected someone at the front door while you are away.' + \
+                ' We\'ve attatched a picture of the individual.\n\nBest regards the sPi team!' \
+                % (client[0], datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
+            self.sendEmail(client[1], subject, text)
+
+    def notifyWhileInDnd(self):
+        subject = 'Someone was at your front door.'
+        for client in self.clients:
+            text = 'Hello %s!\n\n\tAt %s sPi system has detected someone at the front door during your do not disturb hours.' + \
                 ' We\'ve attatched a picture of the individual.\n\nBest regards the sPi team!' \
                 % (client[0], datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))
             self.sendEmail(client[1], subject, text)

@@ -14,7 +14,7 @@ recognizer = cv2.face.LBPHFaceRecognizer_create() # face recognizer
 
 recognizer.read("trained_model.yml") # load the trained data
 
-delta = 0.2
+delta = 0.2 # max time delta between face recognition
 
 cap = cv2.VideoCapture(0) #Get vidoe feed from the Camera
 
@@ -55,7 +55,7 @@ while(True):
         if cv2.waitKey(20) & 0xFF == ord('q'):
             break
     else:
-        print ('Nope') # if loading a frame failed
+        print ('Nope') # if loading a frame failed (camera not working)
 
 # When everything done, release the capture
 cap.release()
