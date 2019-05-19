@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import sched
 
 BLUE_LED = 40
 YELLOW_LED = 33
@@ -33,9 +34,11 @@ def switchYellowOn():
     turnYellowOn()
 
 def unlock():
+    switchBlueOn()
     print('Door unlocked')
 
 def lock():
+    switchYellowOn()
     print('Door locked')
 
 def turnLightsOn():
