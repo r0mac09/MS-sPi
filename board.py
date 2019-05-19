@@ -9,7 +9,7 @@ def setup():
     GPIO.setwarnings(False)
     GPIO.setup(BLUE_LED, GPIO.OUT)
     GPIO.setup(YELLOW_LED, GPIO.OUT)
-    GPIO.output(YELLOW_LED, GPIO.LOW)
+    GPIO.output(YELLOW_LED, GPIO.HIGH)
     GPIO.output(BLUE_LED, GPIO.LOW)
 
 def turnYellowOn():
@@ -24,11 +24,26 @@ def turnBlueOn():
 def turnBlueOff():
     GPIO.output(BLUE_LED, GPIO.LOW)
     
+def switchBlueOn():
+    turnYellowOff()
+    turnBlueOn()
+
+def switchYellowOn():
+    turnBlueOff()
+    turnYellowOn()
+
 def unlock():
     print('Door unlocked')
 
 def lock():
     print('Door locked')
 
+def turnLightsOn():
+    raise NotImplementedError
+
+def kill():
+    turnYellowOff()
+    turnBlueOff()
+    GPIO.cleanup()
 setup()
 
