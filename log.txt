@@ -1,0 +1,45 @@
+<2019-05-20 10:31:15.427397> Logfile cleared
+<2019-05-20 10:31:15.442698> Face detector initializing ...
+<2019-05-20 10:31:15.520773> Face detector initialized.
+<2019-05-20 10:31:15.520773> Creating face recognizer ...
+<2019-05-20 10:31:15.552399> Face recognizer created.
+<2019-05-20 10:31:15.552399> Loading trained model ...
+<2019-05-20 10:31:17.801509> Trained model loaded.
+<2019-05-20 10:31:17.801509> Initializing capture device ...
+<2019-05-20 10:31:19.991630> Capture device initialized.
+<2019-05-20 10:31:19.991630> Testing capture device ...
+<2019-05-20 10:31:20.481354> Capture device is working.
+<2019-05-20 10:31:20.481354> Staring time is 1558337480.481354
+<2019-05-20 10:31:20.491482> Mailing service initializing ...
+<2019-05-20 10:31:23.279494> Mailing service initialized.
+<2019-05-20 10:31:23.363651> Routine initialized.
+<2019-05-20 10:31:23.363651> Recognizer initialized.
+<2019-05-20 10:31:25.825372> Recognized Alex Mihaescu
+<2019-05-20 10:31:25.863161> Recognized Alex Mihaescu
+<2019-05-20 10:31:25.947779> Recognized Alex Mihaescu
+<2019-05-20 10:31:25.979026> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.063733> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.094976> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.179546> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.210758> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.295653> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.342490> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.427138> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.449238> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.527375> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.743550> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.828207> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.865943> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.950585> Recognized Alex Mihaescu
+<2019-05-20 10:31:26.981842> Recognized Alex Mihaescu
+<2019-05-20 10:31:27.066543> Recognized Alex Mihaescu
+<2019-05-20 10:31:27.097789> Recognized Alex Mihaescu
+<2019-05-20 10:31:27.345510> Recognized Alex Mihaescu
+<2019-05-20 10:31:27.583984> Recognized Alex Mihaescu
+<2019-05-20 10:31:27.699867> Recognized Alex Mihaescu
+<2019-05-20 10:31:27.853571> Recognized Alex Mihaescu
+<2019-05-20 10:31:27.947333> Recognized Sorin Rista
+<2019-05-20 10:31:29.858556> Email sent.
+<2019-05-20 10:31:30.153050> Recognizer is shut down ...
+<2019-05-20 10:31:30.206599> ERROR Capture failed
+<2019-05-20 10:31:30.222053> Recognizer is shut down ...
