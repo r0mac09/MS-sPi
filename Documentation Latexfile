@@ -39,7 +39,7 @@ All the related files are stored in this repository:\newline
 \ku{https://github.com/r0mac09/MS-sPi.git}
 
 \section{User (customer) needs}
-An unknown or uninvited person or an object at his front door while he is away from home or isn't expecting any visitors or parcels
+An unknown, uninvited person or an object is at the user's front door while that person is away from home or isn't expecting any visitors.
 
 \section{Description of the solution}
 A system using a RaspberryPi and a Pi camera to stream/process (depending on the processing needs) data from the house straight to the user of the service's servers(a more powerful laptop in our case) to be processed with minimum latency to determine if unknown entities are present at the front door (this is just an use case) and notify the user and, if possible, to take an action.
@@ -47,11 +47,11 @@ A system using a RaspberryPi and a Pi camera to stream/process (depending on the
 \section{User requirements and features}
  - A system which provides information about the environment
 
-  - Alerts during user specified periods if there's any movement or a person or something changed in a specific area
+  - Alerts during user specified periods, if there's any movement, a person or something changed in a specific area
 
   - Communicates with the user through an app or a website
 
-  - The system should run in an environment that provides a 24/24 access
+  - The system should run in an environment that provides a 24/7 access
 
   - The system should recognize objects or persons
 
@@ -67,7 +67,7 @@ A system using a RaspberryPi and a Pi camera to stream/process (depending on the
 \section{Software design}
 
 \subsection{Python modules}
-\ku{\un{smtplib:}}\newline defines an SMTP client session object that can be used to send mail to any Internet machine \newline
+\ku{\un{smtplib:}}\newline defines an SMTP client session object that can be used to send mails to any Internet machine \newline
 \ku{\un{email.mime}}:\newline creates email and MIME objects from scratch\newline
 \ku{\un{RPi.GPIO:}} \newline provides a class to control the GPIO on a Raspberry Pi \newline
 \ku{\un{NumPy:}}\newline provides converting images to numerical arrays\newline
@@ -77,9 +77,17 @@ A system using a RaspberryPi and a Pi camera to stream/process (depending on the
 
 \section{Results and further work}
 The current version of the project supports the following functionalities:
-
+\begin{description}
+\item \(\cdot\) Face Recognition 
+\item \(\cdot\) Notification via mail
+\item \)\cdot\) Status LEDs
+\end{description}
 The following list of extensions and improvements was identified to be supported in the future:
-
+\begin{description}
+\item \)\cdot\) A servo for locking and unlocking the door
+\item \)\cdot\) Infrared lights for improved night vision
+\item \)\cdot\) Cloud and on machine storage
+\end{description}
 \section{References}
 \begin{description}
 \item 1.OpenCV [last seen May 2019]: \ku{https://opencv.org/}
@@ -88,6 +96,7 @@ The following list of extensions and improvements was identified to be supported
 \ku{https://docs.python.org/3/library/smtplib.html}
 \item 4.Email.mime [last seen May 2019]: \ku{https://docs.python.org/2/library/email.mime.html}
 \item 5.NumPy [last seen May 2019]: \ku{https://www.numpy.org/}
+\item 6.Face Recognition [last seen May 2019]: \ku{https://circuitdigest.com/microcontroller-projects/raspberry-pi-and-opencv-based-face-recognition-system}
 \end{description}
 
 
