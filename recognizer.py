@@ -3,18 +3,12 @@ import numpy as np
 import os
 import time
 import mailing
-<<<<<<< HEAD
 import routine
 import board
 
 from PIL import Image
 from logger import log
 
-=======
-import board
-from PIL import Image #Pillow lib for handling images
-from logger import log
->>>>>>> c72c80e276f9bffc01c42ed3486e9b223552c350
 class Recognizer:
     def __init__(self):
         self.labels = ['Alex Galea', 'Alexandra Girda', 'Michelle Bettendorf', 'Alex Mihaescu', 'Bogdan Pocol', 'Ionut Putanu', 'Sorin Rista']
