@@ -1,0 +1,94 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage{newtxtext,newtxmath} %Times new Roman
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{caption,booktabs}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage[backend=biber, citestyle=authortitle-ibid]{biblatex}
+\usepackage{parskip}
+\usepackage{pdfpages}
+
+\makeatletter
+\makeatother
+
+\newcommand{\as}[1]{\glqq#1\grqq{}} %""
+\newcommand{\f}[1]{\textbf{#1}} %bold
+\newcommand{\ku}[1]{\textit{#1}} %italic
+\newcommand{\un}[1]{\underline{#1}} %underlined
+
+
+
+\title{sPi - Camera Surveillance System}
+\author{Cristian Alexandru Mihaescu, Michelle Tina Bettendorf}
+\date{20.May 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Repository}
+All the related files are stored in this repository:\newline
+\ku{https://github.com/r0mac09/MS-sPi.git}
+
+\section{User (customer) needs}
+An unknown or uninvited person or an object at his front door while he is away from home or isn't expecting any visitors or parcels
+
+\section{Description of the solution}
+A system using a RaspberryPi and a Pi camera to stream/process (depending on the processing needs) data from the house straight to the user of the service's servers(a more powerful laptop in our case) to be processed with minimum latency to determine if unknown entities are present at the front door (this is just an use case) and notify the user and, if possible, to take an action.
+
+\section{User requirements and features}
+ - A system which provides information about the environment
+
+  - Alerts during user specified periods if there's any movement or a person or something changed in a specific area
+
+  - Communicates with the user through an app or a website
+
+  - The system should run in an environment that provides a 24/24 access
+
+  - The system should recognize objects or persons
+
+  - The system may provide access to history data for a certain period of time
+
+  - The system may be suitable for outdoors (weatherproof)
+
+\section{System overview}
+\includegraphics[height = 12cm, width = 12cm]{Systemarchitecture.png}
+
+\section{Circuit design}
+\includegraphics[height=12cm,width=12cm]{HardwareOverview.png}
+\section{Software design}
+
+\subsection{Python modules}
+\ku{\un{smtplib:}}\newline defines an SMTP client session object that can be used to send mail to any Internet machine \newline
+\ku{\un{email.mime}}:\newline creates email and MIME objects from scratch\newline
+\ku{\un{RPi.GPIO:}} \newline provides a class to control the GPIO on a Raspberry Pi \newline
+\ku{\un{NumPy:}}\newline provides converting images to numerical arrays\newline
+\ku{\un{OpenCV:}}\newline provides Image processing, face detection and recognition\newline
+\ku{\un {Pillow lib:}} \newline provides handling Images
+
+
+\section{Results and further work}
+The current version of the project supports the following functionalities:
+
+The following list of extensions and improvements was identified to be supported in the future:
+
+\section{References}
+\begin{description}
+\item 1.OpenCV [last seen May 2019]: \ku{https://opencv.org/}
+\item 2.DrawIO [last seen May 2019]:\ku{ https://draw.io}
+\item 3.smtplib [last seen May 2019]:
+\ku{https://docs.python.org/3/library/smtplib.html}
+\item 4.Email.mime [last seen May 2019]: \ku{https://docs.python.org/2/library/email.mime.html}
+\item 5.NumPy [last seen May 2019]: \ku{https://www.numpy.org/}
+\end{description}
+
+
+\end{document}

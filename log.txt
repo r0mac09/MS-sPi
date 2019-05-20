@@ -1,0 +1,41 @@
+<2019-05-20 10:49:08.937906> Logfile cleared
+<2019-05-20 10:49:08.937906> Face detector initializing ...
+<2019-05-20 10:49:08.985012> Face detector initialized.
+<2019-05-20 10:49:09.000444> Creating face recognizer ...
+<2019-05-20 10:49:09.078958> Face recognizer created.
+<2019-05-20 10:49:09.094118> Loading trained model ...
+<2019-05-20 10:49:11.477340> Trained model loaded.
+<2019-05-20 10:49:11.477340> Initializing capture device ...
+<2019-05-20 10:49:12.619378> Capture device initialized.
+<2019-05-20 10:49:12.619378> Testing capture device ...
+<2019-05-20 10:49:13.037030> Capture device is working.
+<2019-05-20 10:49:13.037030> Staring time is 1558338553.037030
+<2019-05-20 10:49:13.037030> Mailing service initializing ...
+<2019-05-20 10:49:14.779240> Mailing service initialized.
+<2019-05-20 10:49:14.779240> Routine initialized.
+<2019-05-20 10:49:14.779240> Recognizer initialized.
+<2019-05-20 10:49:18.854172> Recognized Alex Mihaescu
+<2019-05-20 10:49:18.923186> Recognized Alex Mihaescu
+<2019-05-20 10:49:19.023496> Recognized Alex Mihaescu
+<2019-05-20 10:49:19.123904> Recognized Alex Mihaescu
+<2019-05-20 10:49:19.192673> Recognized Alex Mihaescu
+<2019-05-20 10:49:19.277376> Recognized Alex Mihaescu
+<2019-05-20 10:49:19.362019> Recognized Alex Mihaescu
+<2019-05-20 10:49:19.440160> Recognized Alex Mihaescu
+<2019-05-20 10:49:19.555995> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.026234> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.109846> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.179642> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.279929> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.358022> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.442700> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.527340> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.627799> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.781036> Recognized Alex Mihaescu
+<2019-05-20 10:49:20.865719> Recognized Alex Mihaescu
+<2019-05-20 10:49:21.166803> Recognized Alex Mihaescu
+<2019-05-20 10:49:22.299845> Recognized Michelle Bettendorf
+<2019-05-20 10:49:23.534450> Email sent.
+<2019-05-20 10:49:23.820151> Recognizer is shut down ...
+<2019-05-20 10:49:23.889405> ERROR Capture failed
+<2019-05-20 10:49:23.904798> Recognizer is shut down ...

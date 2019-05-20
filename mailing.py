@@ -37,7 +37,7 @@ class sPiMailing:
         msg.attach(part)
 
         self.smtp.sendmail(self.email, self.client[1],  msg.as_string())
-        log('Mail sent')
+        log('Email sent.')
 
     def notifyWhileAway(self):
         subject = 'Someone at the front door!'
