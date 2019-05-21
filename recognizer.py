@@ -12,7 +12,7 @@ from logger import log
 class Recognizer:
     def __init__(self):
         self.labels = ['Alex Galea', 'Alexandra Girda', 'Michelle Bettendorf', 'Alex Mihaescu', 'Bogdan Pocol', 'Ionut Putanu', 'Sorin Rista']
-        self.allowed = ['Alex Mihaescu']
+        self.allowed = ['Alex Mihaescu', 'Michelle Bettendorf']
 
         log('Face detector initializing ...')
         self.face_cascade = cv2.CascadeClassifier('classifier_data.xml')
@@ -77,7 +77,7 @@ class Recognizer:
                             log('Recognized ' + name)
                             if name in self.allowed:
                                 board.unlock()
-                                print('Do something when recognized an allowed')
+                                self.kill()
                             elif routine.away():
                                 cv2.imwrite('intruder.jpg', img)
                                 if routine.doNotDisturb:
@@ -85,7 +85,8 @@ class Recognizer:
                                     self.kill()
                                     break
                                 else:
-                                    self.mailer.notifyWhileAway()   
+                                    self.mailer.notifyWhileAway()
+                                    self.kill()
                             else:
                                 print('Do something when other than allowed')
                             

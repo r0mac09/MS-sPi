@@ -4,9 +4,10 @@ import sched
 
 from logger import log
 
-BLUE_LED = 40
-YELLOW_LED = 33
+BLUE_LED = 36
+YELLOW_LED = 40
 LOCKED = True
+RELAY = 7
 
 def setup():
     global BLUE_LED
@@ -16,8 +17,10 @@ def setup():
     GPIO.setwarnings(False)
     GPIO.setup(BLUE_LED, GPIO.OUT)
     GPIO.setup(YELLOW_LED, GPIO.OUT)
+    GPIO.setup(RELAY, GPIO.OUT)
     GPIO.output(YELLOW_LED, GPIO.HIGH)
     GPIO.output(BLUE_LED, GPIO.LOW)
+    GPIO.output(RELAY, GPIO.LOW)
 
 def turnYellowOn():
     global YELLOW_LED
@@ -47,10 +50,13 @@ def switchYellowOn():
 def unlock():
     global LOCKED
     if LOCKED:
+        GPIO.output(RELAY, GPIO.HIGH)
         switchBlueOn()
+        time.sleep(0.5)
+        GPIO.output(RELAY, GPIO.LOW)
         LOCKED = False
         log('Door unlocked')
-        time.sleep(5)
+        #time.sleep(5)
 
 # it should put the locked into locked position
 def lock():
@@ -64,7 +70,5 @@ def turnLightsOn():
     raise NotImplementedError
 
 def kill():
-    turnYellowOff()
-    turnBlueOff()
     GPIO.cleanup()
     log('Raspberry functionality is shut down ...')
